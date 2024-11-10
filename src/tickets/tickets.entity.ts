@@ -1,4 +1,5 @@
 import { Rifa } from 'src/rifas/rifas.entity';
+import { User } from 'src/users/users.entity';
 import {
   Column,
   Entity,
@@ -17,6 +18,10 @@ export class Ticket {
   @ManyToOne(() => Rifa, (rifa) => rifa.tickets, { nullable: false })
   @JoinColumn({ name: 'rifa_id' })
   rifa: Rifa;
+
+  @ManyToOne(() => User, (user) => user.tickets, { nullable: true })
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
   @Column({ type: 'int' })
   ticket_number: number;

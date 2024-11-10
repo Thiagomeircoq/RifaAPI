@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RifasModule } from './rifas/rifas.module';
 import { TicketsModule } from './tickets/tickets.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { TicketsModule } from './tickets/tickets.module';
     }),
     RifasModule,
     TicketsModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

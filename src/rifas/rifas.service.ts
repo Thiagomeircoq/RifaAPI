@@ -24,9 +24,9 @@ export class RifasService {
         await transactionalEntityManager.save(rifa);
 
         const tickets = Array.from(
-          { length: createRifaDto.max_ticket + 1 },
+          { length: createRifaDto.max_ticket },
           (_, i) => ({
-            ticket_number: i,
+            ticket_number: i + 1,
             status: 'available',
             rifa: rifa,
           }),
